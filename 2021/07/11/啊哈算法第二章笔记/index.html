@@ -4,15 +4,68 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>啊哈算法第二章笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="啊哈算法栈、队列、链表解密QQ号——队列引入两个整型变量head和tail。head用来记录队列的队首，tail用来记录队列的队尾的下一个位置。因为当队列中只剩下一个元素时，队首和队尾重合会带来麻烦，在此规定队首和队尾重合时，队列为空。 将现有的9个数全部放入队列后head&#x3D;1;tail&#x3D;10；此时head和tail之间的数就是“有效”的数。 要删除一个数，只需要head++ 这样的优点：节省大量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="啊哈算法第二章笔记">
+<meta property="og:url" content="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="啊哈算法栈、队列、链表解密QQ号——队列引入两个整型变量head和tail。head用来记录队列的队首，tail用来记录队列的队尾的下一个位置。因为当队列中只剩下一个元素时，队首和队尾重合会带来麻烦，在此规定队首和队尾重合时，队列为空。 将现有的9个数全部放入队列后head&#x3D;1;tail&#x3D;10；此时head和tail之间的数就是“有效”的数。 要删除一个数，只需要head++ 这样的优点：节省大量">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617134653111.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617135051588.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617135143032.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617135946058.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617140314227.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617140449114.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617142526901.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617142535356.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143114031.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143307412.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143615628.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143800388.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143842024.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143858579.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144253192.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144301401.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144527390.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144749881.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617145854351.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150002825.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150049970.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150124231.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150143251.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150154610.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150205341.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150306243.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617151735913.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617151810743.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152458275.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152506927.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152833497.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152842084.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153224617.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153304610.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153339361.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153355756.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153427210.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153456458.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153521876.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153647297.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153718761.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153729013.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153809356.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153906069.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154014200.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154330814.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154357042.png">
+<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154411764.png">
+<meta property="article:published_time" content="2021-07-11T10:44:04.894Z">
+<meta property="article:modified_time" content="2021-07-11T11:15:15.944Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617134653111.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,9 +122,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-啊哈算法第二章笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-啊哈算法第二章笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" class="article-date">
   <time class="dt-published" datetime="2021-07-11T10:44:04.894Z" itemprop="datePublished">2021-07-11</time>
@@ -84,8 +135,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/">啊哈算法第二章笔记</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      啊哈算法第二章笔记
     </h1>
   
 
@@ -237,62 +288,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/22/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-06-22T04:33:40.960Z" itemprop="datePublished">2021-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/22/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2021/06/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/22/hello-world/" data-id="ckqz3cl9t0000i4svgibh080t" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
