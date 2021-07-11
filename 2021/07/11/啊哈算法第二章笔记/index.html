@@ -1,150 +1,74 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>啊哈算法第二章笔记 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="啊哈算法栈、队列、链表解密QQ号——队列引入两个整型变量head和tail。head用来记录队列的队首，tail用来记录队列的队尾的下一个位置。因为当队列中只剩下一个元素时，队首和队尾重合会带来麻烦，在此规定队首和队尾重合时，队列为空。 将现有的9个数全部放入队列后head&#x3D;1;tail&#x3D;10；此时head和tail之间的数就是“有效”的数。 要删除一个数，只需要head++ 这样的优点：节省大量">
-<meta property="og:type" content="article">
-<meta property="og:title" content="啊哈算法第二章笔记">
-<meta property="og:url" content="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="啊哈算法栈、队列、链表解密QQ号——队列引入两个整型变量head和tail。head用来记录队列的队首，tail用来记录队列的队尾的下一个位置。因为当队列中只剩下一个元素时，队首和队尾重合会带来麻烦，在此规定队首和队尾重合时，队列为空。 将现有的9个数全部放入队列后head&#x3D;1;tail&#x3D;10；此时head和tail之间的数就是“有效”的数。 要删除一个数，只需要head++ 这样的优点：节省大量">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617134653111.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617135051588.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617135143032.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617135946058.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617140314227.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617140449114.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617142526901.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617142535356.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143114031.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143307412.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143615628.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143800388.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143842024.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617143858579.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144253192.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144301401.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144527390.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617144749881.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617145854351.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150002825.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150049970.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150124231.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150143251.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150154610.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150205341.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617150306243.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617151735913.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617151810743.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152458275.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152506927.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152833497.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617152842084.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153224617.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153304610.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153339361.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153355756.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153427210.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153456458.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153521876.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153647297.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153718761.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153729013.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153809356.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617153906069.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154014200.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154330814.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154357042.png">
-<meta property="og:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617154411764.png">
-<meta property="article:published_time" content="2021-07-11T10:44:04.894Z">
-<meta property="article:modified_time" content="2021-07-11T11:15:15.944Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/86139/AppData/Roaming/Typora/typora-user-images/image-20210617134653111.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="utf-8">
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+    <title>啊哈算法第二章笔记 | Hexo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon/favicon.ico">
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/main.css">
 
-  
+    
+<link rel="stylesheet" href="/css/tagplugins.css">
+
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+    
+
+
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+    
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+  <div class="blog-header">
+   <a id="menu-nav-icon"><img src="/image/menu.png"/></a>
+   <div class="nav-container">
+     <nav id="main-nav">
+       
+         <a class="main-nav-link" href="/">Home</a>
+       
+         <a class="main-nav-link" href="/archives">Archives</a>
+       
+     </nav>
+   </div>
+   <!--
+   <div id="search-form-wrap">
+     <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+   </div>
+ -->
+    <h1 class="blog-title">Hexo</h1>
+    <p class="lead blog-description"></p>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-啊哈算法第二章笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2021-07-11T10:44:04.894Z" itemprop="datePublished">2021-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      啊哈算法第二章笔记
+  <div id='main-part'>
+      <div class="main">
+<div class="blog-post">
+    <!-- Title -->
+    <h1 class="blog-post-title">
+        <a href="/2021/07/11/啊哈算法第二章笔记/">
+            啊哈算法第二章笔记
+        </a>
     </h1>
-  
+    <!-- Date and Author -->
+    <p class="blog-post-meta">
+        2021-07-11
+        
+    </p>
 
-      </header>
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="啊哈算法"><a href="#啊哈算法" class="headerlink" title="啊哈算法"></a>啊哈算法</h1><h2 id="栈、队列、链表"><a href="#栈、队列、链表" class="headerlink" title="栈、队列、链表"></a>栈、队列、链表</h2><h3 id="解密QQ号——队列"><a href="#解密QQ号——队列" class="headerlink" title="解密QQ号——队列"></a>解密QQ号——队列</h3><p><strong>引入两个整型变量head和tail。head用来记录队列的队首，tail用来记录队列的队尾的下一个位置。因为当队列中只剩下一个元素时，队首和队尾重合会带来麻烦，在此规定队首和队尾重合时，队列为空。</strong></p>
+
+    <!-- Content -->
+    <h1 id="啊哈算法"><a href="#啊哈算法" class="headerlink" title="啊哈算法"></a>啊哈算法</h1><h2 id="栈、队列、链表"><a href="#栈、队列、链表" class="headerlink" title="栈、队列、链表"></a>栈、队列、链表</h2><h3 id="解密QQ号——队列"><a href="#解密QQ号——队列" class="headerlink" title="解密QQ号——队列"></a>解密QQ号——队列</h3><p><strong>引入两个整型变量head和tail。head用来记录队列的队首，tail用来记录队列的队尾的下一个位置。因为当队列中只剩下一个元素时，队首和队尾重合会带来麻烦，在此规定队首和队尾重合时，队列为空。</strong></p>
 <p><strong>将现有的9个数全部放入队列后head=1;tail=10；此时head和tail之间的数就是“有效”的数。</strong></p>
 <p><strong>要删除一个数，只需要head++</strong></p>
 <p><strong>这样的优点：节省大量时间；新增一个数只需把新增的数放到队尾，即q[tail]之后再tail++就OK</strong></p>
@@ -278,126 +202,87 @@
 <p><img src="C:\Users\86139\AppData\Roaming\Typora\typora-user-images\image-20210617154357042.png" alt="image-20210617154357042"></p>
 <p><img src="C:\Users\86139\AppData\Roaming\Typora\typora-user-images\image-20210617154411764.png" alt="image-20210617154411764"></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" data-id="ckqz3onbq0000pcsva42y8z0z" data-title="啊哈算法第二章笔记" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          啊哈算法第一章笔记
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/06/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
 
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
+    <!-- Social share choices -->
     
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li></ul>
-    </div>
+  <div id="social-share">
+    <a data-url="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener" href="https://plus.google.com/share?url=" class="googleplus"><img src="/image/googleplusicon.png" alt=""/></a>
+    <a data-url="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=" class="twitter"><img src="/image/twittericon.png" alt=""/></a>
+    <a data-url="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener" href="http://pinterest.com/pin/create/button/?url=" class="pinterest"><img src="/image/pinteresticon.png" alt=""/></a>
+    <a data-url="http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook"><img src="/image/facebookicon.png" alt=""/></a>
   </div>
 
 
-  
+
+
+
+<!--
+
+
+https://www.facebook.com/sharer/sharer.php?u=http://example.com/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/
+http://example.com/2021/07/11/%25E5%2595%258A%25E5%2593%2588%25E7%25AE%2597%25E6%25B3%2595%25E7%25AC%25AC%25E4%25BA%258C%25E7%25AB%25A0%25E7%25AC%2594%25E8%25AE%25B0/
+-->
+
+
+
+    <hr />
+
+
+    <!-- Tags and Categories links -->
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%AC%94%E8%AE%B0/">啊哈算法第一章笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/11/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95%E7%AC%AC%E4%BA%8C%E7%AB%A0%E7%AC%94%E8%AE%B0/">啊哈算法第二章笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/22/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    <!-- Comment using disqus -->
+    
 
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
+</div>
+</div>
 
 
   </div>
+  <!-- Footer -->
+  <div id="footer">
+  <div id="footer-social">
+    
+    
+    
+    
+    
+    
+</div>
+
+  <p id="footer-info">
+    &copy; 2021 John Doe<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+    Theme <a href="https://github.com/Suolawangzai/hexo-theme-nebula" target="_blank">nebula</a>
+  </p>
+
+  <div id="busuanzi">
+    <span id="busuanzi_container_site_pv">
+      &hearts;
+    Total visits: <span id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+  <!--
+  <div id="footer-info">
+    &copy; 2021 John Doe<br>
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  </div>
+-->
+</div>
+
+  <!-- After footer scripts -->
+  <!-- Disqus Comments -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/main.js"></script>
+
+
 </body>
+
 </html>
